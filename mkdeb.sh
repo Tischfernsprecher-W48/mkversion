@@ -24,11 +24,17 @@ rm -rf $DSTDIR/.git
 
 cd $DSTDIR
 
+
+dch --fromdirname --empty This is a Debian package
+
+
 dh_make --indep --createorig --copyright gpl --yes
 
 cat <<EOF >debian/install
 $PROGRAMM usr/sbin
 EOF
+
+
 
 
 debuild -us -uc
