@@ -24,28 +24,11 @@ rm -rf $DSTDIR/.git
 
 cd $DSTDIR
 
-
 dh_make --indep --createorig --copyright gpl --yes
-
-
-
-#/bin/bash
-
-#rm debian/*.ex debian/*.EX debian/README.Debian debian/README.source 
-
-#cat <<EOF >>debian/rules
-#override_dh_auto_configure:
-#	dh_auto_configure -- --prefix=/usr/local --target=arm-linux-gnueabihf  --host=arm-linux-gnueabi CC=/usr/local/bin/arm-linux-gnueabihf-gcc
-#EOF
-
-
-#cat <<EOF >debian/install
-#$PROGRAMM usr/sbin
-#EOF
 
 debuild -us -uc
 
 cd ..
 cp *.deb $SRCDIR
 
-#rm -rf $TMPDIR
+rm -rf $TMPDIR
