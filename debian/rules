@@ -170,6 +170,6 @@ binary-indep: install-indep
 override_dh_auto_configure:
 	dh_auto_configure -- --prefix=/usr --target=arm-linux-gnueabihf  --host=arm-linux-gnueabi CC=/usr/local/bin/arm-linux-gnueabihf-gcc
 
-#override_dh_auto_build:
-#	make
+override_dh_auto_build:
+	make
 
